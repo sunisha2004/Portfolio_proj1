@@ -1,4 +1,5 @@
 import React from 'react';
+import { FaLinkedin, FaGithub, FaEnvelope } from 'react-icons/fa'; 
 
 const Contact = () => {
     return (
@@ -8,27 +9,35 @@ const Contact = () => {
                 Feel free to reach out to me on the following platforms or via email:
             </p>
             <div className="flex flex-col items-center space-y-4">
+         
                 <a 
                     href="https://www.linkedin.com/in/sunisha-m-2535502b3" 
-                    className="text-xl font-medium text-blue-500 underline hover:text-blue-700 transition duration-300"
+                    className="text-xl font-medium text-blue-500 flex items-center space-x-2 hover:text-blue-700 transition duration-300 animate-pulse"
                     target="_blank" 
                     rel="noopener noreferrer"
                 >
-                    LinkedIn
+                    <FaLinkedin size={24} />
+                    <span>LinkedIn</span>
                 </a>
+                
+               
                 <a 
                     href="https://github.com/sunisha2004" 
-                    className="text-xl font-medium text-blue-500 underline hover:text-blue-700 transition duration-300"
+                    className="text-xl font-medium text-blue-500 flex items-center space-x-2 hover:text-blue-700 transition duration-300 animate-pulse"
                     target="_blank" 
                     rel="noopener noreferrer"
                 >
-                    GitHub
+                    <FaGithub size={24} /> 
+                    <span>GitHub</span>
                 </a>
+                
+                {/* Email */}
                 <a 
                     href="mailto:sunisha@example.com" 
-                    className="text-xl font-medium text-blue-500 underline hover:text-blue-700 transition duration-300"
+                    className="text-xl font-medium text-blue-500 flex items-center space-x-2 hover:text-blue-700 transition duration-300 animate-pulse"
                 >
-                    Email: sunishams2004@gmail.com
+                    <FaEnvelope size={24} /> 
+                    <span>Email: sunishams2004@gmail.com</span>
                 </a>
             </div>
         </section>
