@@ -9,7 +9,7 @@ const Contact = () => {
                 Feel free to reach out to me on the following platforms or via email:
             </p>
             <div className="flex flex-col items-center space-y-4">
-         
+                
                 <a 
                     href="https://www.linkedin.com/in/sunisha-m-2535502b3" 
                     className="text-xl font-medium text-blue-500 flex items-center space-x-2 hover:text-blue-700 transition duration-300 animate-pulse"
@@ -31,7 +31,6 @@ const Contact = () => {
                     <span>GitHub</span>
                 </a>
                 
-                {/* Email */}
                 <a 
                     href="mailto:sunisha@example.com" 
                     className="text-xl font-medium text-blue-500 flex items-center space-x-2 hover:text-blue-700 transition duration-300 animate-pulse"

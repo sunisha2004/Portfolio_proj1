@@ -1,13 +1,19 @@
 import React from 'react';
+import { useInView } from 'react-intersection-observer';
 import image from '/mee1.jpg';
 
 const About = () => {
+    const heading = "About Me";
+    const { ref: headingRef, inView: headingInView } = useInView({
+        triggerOnce: false, 
+        threshold: 0.5,
+    });
+
     return (
         <section
             id="about"
             className="bg-white text-black p-8 rounded-lg shadow-lg mb-8 flex flex-col md:flex-row items-center md:items-start"
         >
-         
             <div className="md:w-1/3 w-full mb-6 md:mb-0 flex justify-center">
                 <img
                     src={image}
@@ -16,9 +22,24 @@ const About = () => {
                 />
             </div>
 
-           
             <div className="md:w-2/3 w-full md:pl-8">
-                <h2 className="text-4xl font-bold mb-6 text-center md:text-left">About Me</h2>
+                <h2
+                    ref={headingRef}
+                    className="text-4xl font-extrabold text-center mb-8 text-black"
+                >
+                    {heading.split("").map((char, index) => (
+                        <span
+                            key={index}
+                            className={`inline-block ${
+                                headingInView
+                                    ? `opacity-100 transform transition-all duration-500 ease-out delay-[${index * 100}ms] translate-x-0`
+                                    : "opacity-0 transform translate-x-8"
+                            }`}
+                        >
+                            {char}
+                        </span>
+                    ))}
+                </h2>
                 <div className="space-y-6">
                     <p className="text-sm leading-relaxed">
                         I am a passionate and detail-oriented <span className="font-semibold">MERN Stack Developer</span>, 
